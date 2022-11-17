@@ -13,7 +13,7 @@ public class UserService {
     public UserService(UserRepo repository){
         this.repository=repository;
     }
-
+    
     //Use of cases
 
     //1) Get All Users
