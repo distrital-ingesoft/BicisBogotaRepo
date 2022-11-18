@@ -35,10 +35,10 @@ public class User {
     @Column(unique = true, name="email")
     String Email;
 
-    @Column(unique = true, name="Phone")
+    @Column(unique = true, name="phone")
     String Phone;
 
-    @Column(unique = true, name="adminmode")
+    @Column(name="adminmode")
     Boolean AdminMode;
 
     // relations
@@ -46,7 +46,7 @@ public class User {
     // User 1 -- * Rent
     @OneToMany(mappedBy = "user")
     List<Rent> rents = new ArrayList<>(); 
-    
+
     // User 1 -- * Arrive
     @OneToMany(mappedBy = "user")
     List<Arrive> arrives = new ArrayList<>();
