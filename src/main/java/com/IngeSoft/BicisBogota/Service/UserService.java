@@ -26,7 +26,7 @@ public class UserService {
     //2) Create a new user if the ID and Email are not exit already
     public User addUser(User newUser) throws Exception{
         
-        List<User> list1 = this.repository.findById(newUser.getId_user());
+        List<User> list1 = this.repository.findByUserId(newUser.getId_user());
         List<User> list2 = this.repository.findByEmail(newUser.getEmail());
         
         boolean status1 = list1.isEmpty();
@@ -44,7 +44,7 @@ public class UserService {
 
     //3) Search for a particular user
     public User findUser_id(Long id) throws Exception{
-        List<User> list = this.repository.findById(id);
+        List<User> list = this.repository.findByUserId(id);
         Boolean status = list.isEmpty();
 
         if(status == true){
@@ -54,7 +54,17 @@ public class UserService {
         }
     }
 
-    
+    //4) Delete a user by ID
+    public void deleteUser_id(Long id) throws Exception{
+        List<User> list = this.repository.findByUserId(id);
+        Boolean status = list.isEmpty();
+
+        if(status == true){
+            throw new Exception("There is not User with this ID");
+        }else{
+            this.repository.deleteById(id);
+        }
+    }
 
 
 }

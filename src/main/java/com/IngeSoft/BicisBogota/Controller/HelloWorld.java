@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorld {
     @GetMapping("/")
     public String getMessage(){
-        return "Hello World";
+        return "Hello World <p>"
+        +"<hr/>"
+        + "<ul>"
+        + "<li><a href=\"./users\">Users</a></li>"
+        + "<li><a href=\"./bicycles\">Bicycles</a></li>"
+        + "<li><a href=\"./rents\">Rents</a></li>"
+        + "</ul>";
     }
 }

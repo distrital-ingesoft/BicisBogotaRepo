@@ -1,5 +1,7 @@
 package com.IngeSoft.BicisBogota.Repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,7 +12,7 @@ public interface UserRepo extends JpaRepository<User,Long>{
 
     //Query methods to search for something
 
-    List<User> findById(Long Id_user);
+    List<User> findByUserId(Long Id_user);
 
     List<User> finByName(String Name);
 

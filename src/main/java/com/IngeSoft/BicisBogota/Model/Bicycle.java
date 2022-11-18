@@ -25,8 +25,8 @@ public class Bicycle {
     
     //Atributes
     @Id
-    @GeneratedValue
-    @Column(name="id_bicycle")
+    //@GeneratedValue
+    @Column(unique = true, nullable=false, name="id_bicycle")
     Integer Id_bicycle;
     
     @Column(name="brand")
@@ -35,6 +35,8 @@ public class Bicycle {
     Integer Year;
     @Column(name="price")
     Double Price;
+    @Column(nullable=false, name="borrowed")
+    Boolean Borrowed;
 
     //Relations
 

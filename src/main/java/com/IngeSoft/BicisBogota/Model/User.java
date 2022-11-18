@@ -26,7 +26,7 @@ public class User {
     // atributes
 
     @Id
-    @Column(name="id_user")
+    @Column(unique=true, nullable = false, name="id_user")
     Long Id_user;
 
     @Column(nullable=false,name="name")
