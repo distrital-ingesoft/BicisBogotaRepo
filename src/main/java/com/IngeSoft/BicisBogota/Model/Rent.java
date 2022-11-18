@@ -20,28 +20,25 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class Rent {
     
+    //Atributes
+
     @Id
     @GeneratedValue
     @Column(name="id_rent")
     Integer Id_rent;
 
-    @Column
-    String Location_name;
+    // Relations
 
-    // relaciones
-    // no son atributos
-
-
-    // Long Id_user;
-    // 1 renta tiene 1 usuario
-    // renta * --- 1 usuario
+    //Rent * -- 1 User
     @ManyToOne
     User user;
 
-    // Integer Id_bicycle;
-    // cada renta tiene 1 bicicleta
-    // renta * -- 1 bicycle
+    //Rent * -- 1 Bicycle
     @ManyToOne
     Bicycle bicycle;
+
+    //Rent * -- 1 Location
+    @ManyToOne
+    Location location;
 
 }

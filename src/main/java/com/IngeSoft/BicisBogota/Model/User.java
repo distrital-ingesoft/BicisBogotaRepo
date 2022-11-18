@@ -23,28 +23,33 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class User {
     
-    // atributos
+    // atributes
 
     @Id
     @Column(name="id_user")
     Long Id_user;
 
-    @Column(nullable=false)
+    @Column(nullable=false,name="name")
     String Name;
 
-    @Column(unique = true)
+    @Column(unique = true, name="email")
     String Email;
 
+    @Column(unique = true, name="Phone")
     String Phone;
 
+    @Column(unique = true, name="adminmode")
     Boolean AdminMode;
 
-    // relaciones
+    // relations
 
-    // 1 usuario tiene muchas rentas
-    // tiene que ser una colección
-    // list, set, ..
+    // User 1 -- * Rent
     @OneToMany(mappedBy = "user")
-    List<Rent> rentas = new ArrayList<>(); 
+    List<Rent> rents = new ArrayList<>(); 
+    
+    // User 1 -- * Arrive
+    @OneToMany(mappedBy = "user")
+    List<Arrive> arrives = new ArrayList<>();
+    
 
 }

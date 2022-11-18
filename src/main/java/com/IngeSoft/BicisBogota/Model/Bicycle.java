@@ -23,17 +23,27 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class Bicycle {
     
+    //Atributes
     @Id
     @GeneratedValue
+    @Column(name="id_bicycle")
     Integer Id_bicycle;
     
-    @Column
+    @Column(name="brand")
     String Brand;
+    @Column(name="year")
     Integer Year;
-    Double price;
+    @Column(name="price")
+    Double Price;
+
+    //Relations
 
     // Bicycle 1 -- * Rent 
     @OneToMany(mappedBy = "bicycle")
     List<Rent> rentas = new ArrayList<>();
+
+    // Bicycle 1 -- * Arrive 
+    @OneToMany(mappedBy = "bicycle")
+    List<Arrive> arrives = new ArrayList<>();
 
 }

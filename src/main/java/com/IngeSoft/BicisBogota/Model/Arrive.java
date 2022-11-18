@@ -1,5 +1,6 @@
 package com.IngeSoft.BicisBogota.Model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,17 +20,25 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class Arrive {
 
+    //Atributes
+
     @Id
     @GeneratedValue
     Integer Id_arrive;
 
-    @Column
-    Long Id_user;
+    //Relations
 
-    // Relación ??
-    Integer Id_bicycle;
+    // Arrive 1 -- * User
+    @ManyToOne
+    User user;
+    
+    // Arrive 1 -- * Bicycle
+    @ManyToOne
+    Bicycle bicycle;
 
-    String Location_name;
+    // Arrive 1 -- * Location
+    @ManyToOne
+    Location location;
     
 
 }

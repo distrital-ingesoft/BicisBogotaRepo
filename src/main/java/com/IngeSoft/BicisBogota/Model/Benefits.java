@@ -18,11 +18,17 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class Benefits {
+    
+    //Atributes
+    
     @Id
     @GeneratedValue
+    @Column(name="id_benefit")
     Integer Id_benefit;
 
-    @Column
+    @Column(name="numberOfArrives",nullable=false)
     Integer NoOfArrives;
+
+    @Column(name="description",nullable=false)
     String Description;
 }
