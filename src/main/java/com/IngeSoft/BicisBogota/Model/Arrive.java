@@ -18,13 +18,17 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class Arrive {
+
     @Id
     @GeneratedValue
     Integer Id_arrive;
 
     @Column
     Long Id_user;
+
+    // Relación ??
     Integer Id_bicycle;
+
     String Location_name;
     
 
