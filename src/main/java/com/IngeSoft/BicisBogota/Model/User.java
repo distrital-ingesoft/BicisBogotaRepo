@@ -24,10 +24,9 @@ import lombok.Setter;
 public class User {
     
     // atributes
-
     @Id
     @Column(unique=true, nullable = false, name="id_user")
-    Long Id_user;
+    Long IdUser;
 
     @Column(nullable=false,name="name")
     String Name;

@@ -12,7 +12,7 @@ public interface UserRepo extends JpaRepository<User,Long>{
 
     //Query methods to search for something
 
-    List<User> findByUserId(Long Id_user);
+    List<User> findByIdUser(Long Id_user);
 
     List<User> finByName(String Name);
 

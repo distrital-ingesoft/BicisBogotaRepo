@@ -10,7 +10,7 @@ import com.IngeSoft.BicisBogota.Model.Bicycle;
 @Repository
 public interface BicycleRepo extends JpaRepository<Bicycle,Integer>{
     
-    List<Bicycle> findByBicycleId(Integer Id_bicycle);
+    List<Bicycle> findByIdBicycle(Integer Id_bicycle);
 
     List<Bicycle> findByBrand(String Brand);
 

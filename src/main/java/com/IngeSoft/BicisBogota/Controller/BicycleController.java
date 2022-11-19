@@ -30,7 +30,7 @@ public class BicycleController {
     @ResponseStatus(code= HttpStatus.CREATED)
     public String addBicycle ( @RequestBody Bicycle newBicycle ) throws Exception{
         Bicycle newbicycle = this.service.addBicycle(newBicycle);
-        return newbicycle.getId_bicycle().toString();
+        return newbicycle.getIdBicycle().toString();
     }
 
     

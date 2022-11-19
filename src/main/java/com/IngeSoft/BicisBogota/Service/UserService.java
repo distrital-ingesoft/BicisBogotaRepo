@@ -26,15 +26,15 @@ public class UserService {
     //2) Create a new user if the ID and Email are not exit already
     public User addUser(User newUser) throws Exception{
         
-        List<User> list1 = this.repository.findByUserId(newUser.getId_user());
-        List<User> list2 = this.repository.findByEmail(newUser.getEmail());
+        List<User> usuariosConMismoNombre = this.repository.findByIdUser(newUser.getIdUser());
+        List<User> usuariosConMismoEmail = this.repository.findByEmail(newUser.getEmail());
         
-        boolean status1 = list1.isEmpty();
-        boolean status2 = list2.isEmpty();
+        //boolean status1 = usuariosConMismoNombre.isEmpty();
+        //boolean status2 = list2.isEmpty();
 
-        if(status1 == false){
+        if(!usuariosConMismoNombre.isEmpty()){
             throw new Exception("The user's ID is already registered!");
-        }else if (status2 == false){
+        }else if (!usuariosConMismoEmail.isEmpty()){
             throw new Exception("The user's Email is already registered!");
         }
         else{
@@ -44,22 +44,22 @@ public class UserService {
 
     //3) Search for a particular user
     public User findUser_id(Long id) throws Exception{
-        List<User> list = this.repository.findByUserId(id);
-        Boolean status = list.isEmpty();
+        List<User> usuariosConMismoNombre = this.repository.findByIdUser(id);
+        //Boolean status = list.isEmpty();
 
-        if(status == true){
+        if(!usuariosConMismoNombre.isEmpty()){
             throw new Exception("There is not User with this ID");
         }else{
-            return list.get(0);
+            return usuariosConMismoNombre.get(0);
         }
     }
 
     //4) Delete a user by ID
     public void deleteUser_id(Long id) throws Exception{
-        List<User> list = this.repository.findByUserId(id);
-        Boolean status = list.isEmpty();
+        List<User> usuariosConMismoNombre = this.repository.findByIdUser(id);
+        //Boolean status = list.isEmpty();
 
-        if(status == true){
+        if(!usuariosConMismoNombre.isEmpty()){
             throw new Exception("There is not User with this ID");
         }else{
             this.repository.deleteById(id);

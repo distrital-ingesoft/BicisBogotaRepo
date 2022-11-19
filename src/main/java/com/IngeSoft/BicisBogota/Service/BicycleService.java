@@ -26,7 +26,7 @@ public class BicycleService {
 
     //2) Add a new Bicycle
     public Bicycle addBicycle (Bicycle newBicycle) throws Exception{
-        List<Bicycle> list1 = this.repository.findByBicycleId(newBicycle.getId_bicycle());
+        List<Bicycle> list1 = this.repository.findByIdBicycle(newBicycle.getIdBicycle());
         boolean status1 = list1.isEmpty();
         if(status1 == false){
             throw new Exception("The bicycle's ID is already registered!");
@@ -37,7 +37,7 @@ public class BicycleService {
 
     //3) Search for a particular bicycle
     public Bicycle findBicycle_id(Integer id) throws Exception{
-        List<Bicycle> list = this.repository.findByBicycleId(id);
+        List<Bicycle> list = this.repository.findByIdBicycle(id);
         Boolean status = list.isEmpty();
 
         if(status == true){
@@ -49,7 +49,7 @@ public class BicycleService {
 
     //4) Delete a bicycle by ID
     public void deleteBicycle_id(Integer id) throws Exception{
-        List<Bicycle> list = this.repository.findByBicycleId(id);
+        List<Bicycle> list = this.repository.findByIdBicycle(id);
         Boolean status = list.isEmpty();
 
         if(status == true){

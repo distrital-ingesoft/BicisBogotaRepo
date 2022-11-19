@@ -27,7 +27,7 @@ public class Bicycle {
     @Id
     //@GeneratedValue
     @Column(unique = true, nullable=false, name="id_bicycle")
-    Integer Id_bicycle;
+    Integer IdBicycle;
     
     @Column(name="brand")
     String Brand;
