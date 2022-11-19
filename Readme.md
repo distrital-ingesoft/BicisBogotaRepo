@@ -6,3 +6,4 @@ The goal is to setup a web service using Docker and Springboot framework (Depene
 
 The initial Entity Relationship diagram (ERD) is shown below:
 
+![UML](https://user-images.githubusercontent.com/118269376/202829431-6094530c-dbd5-488e-bfa5-bb735b3bca2f.jpg)
