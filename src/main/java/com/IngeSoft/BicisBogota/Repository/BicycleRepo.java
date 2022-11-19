@@ -16,7 +16,7 @@ public interface BicycleRepo extends JpaRepository<Bicycle,Integer>{
 
     List<Bicycle> findByYear(Integer Year);
 
-    List<Bicycle> finByPrice(Double Price);
+    List<Bicycle> findByPrice(Double Price);
 
     List<Bicycle> findByBorrowed(Boolean Borrowed); 
 

@@ -14,11 +14,11 @@ public interface UserRepo extends JpaRepository<User,Long>{
 
     List<User> findByIdUser(Long Id_user);
 
-    List<User> finByName(String Name);
+    List<User> findByName(String Name);
 
     List<User> findByEmail(String Email);
 
-    List<User> finByPhone(String Phone);
+    List<User> findByPhone(String Phone);
 
     List<User> findByAdminMode(Boolean AdminMode);
 

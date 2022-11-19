@@ -27,16 +27,21 @@ public class Bicycle {
     @Id
     //@GeneratedValue
     @Column(unique = true, nullable=false, name="id_bicycle")
-    Integer IdBicycle;
+    Integer idBicycle;
     
     @Column(name="brand")
-    String Brand;
+    String brand;
+    
     @Column(name="year")
-    Integer Year;
+    Integer year;
+    
+    // getPrice
     @Column(name="price")
-    Double Price;
+    Double price;
+
+    // isBorrowed
     @Column(nullable=false, name="borrowed")
-    Boolean Borrowed;
+    Boolean borrowed;
 
     //Relations
 
