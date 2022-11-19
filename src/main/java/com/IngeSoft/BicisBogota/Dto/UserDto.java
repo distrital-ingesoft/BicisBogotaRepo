@@ -1,5 +1,7 @@
 package com.IngeSoft.BicisBogota.Dto;
 
+import com.IngeSoft.BicisBogota.Model.User;
+
 //import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -11,19 +13,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
-
 public class UserDto {
-    Long Id_user;
     String Name;
     String Email;
-    String Phone;
-    Boolean AdminMode;
 
-    public UserDto (Long Id_user, String Name, String Email, String Phone, Boolean AdminMode) {
-        this.Id_user = Id_user;
+    public UserDto (User user) {
+        this(user.getName(), user.getEmail());
+    }
+
+    public UserDto (String Name, String Email) {
         this.Name = Name;
         this.Email = Email;
-        this.Phone = Phone;
-        this.AdminMode = AdminMode;
     }
 }

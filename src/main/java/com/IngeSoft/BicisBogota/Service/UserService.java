@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.IngeSoft.BicisBogota.Repository.UserRepo;
+import com.IngeSoft.BicisBogota.Dto.UserDto;
 import com.IngeSoft.BicisBogota.Model.User;
 
 @Component
@@ -21,6 +22,10 @@ public class UserService {
     //1) Get All Users
     public Iterable<User> getAllUsers(){
         return this.repository.findAll();
+    }
+
+    public Iterable<UserDto> getAllUserDto() {
+        return (Iterable<UserDto>) this.repository.findTodos();
     }
 
     //2) Create a new user if the ID and Email are not exit already

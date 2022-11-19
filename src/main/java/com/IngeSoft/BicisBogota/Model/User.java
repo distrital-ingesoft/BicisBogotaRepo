@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,10 +45,12 @@ public class User {
     // relations
 
     // User 1 -- * Rent
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     List<Rent> rents = new ArrayList<>(); 
 
     // User 1 -- * Arrive
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     List<Arrive> arrives = new ArrayList<>();
     

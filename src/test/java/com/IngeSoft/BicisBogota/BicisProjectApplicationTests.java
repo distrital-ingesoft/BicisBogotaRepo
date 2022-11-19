@@ -8,6 +8,8 @@ class BicisProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// carga el proyecto
+		// ver que carga sin problemas
 	}
 
 }
