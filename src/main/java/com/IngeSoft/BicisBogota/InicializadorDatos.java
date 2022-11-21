@@ -1,13 +1,17 @@
 package com.IngeSoft.BicisBogota;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.IngeSoft.BicisBogota.Model.Arrive;
 import com.IngeSoft.BicisBogota.Model.Bicycle;
 import com.IngeSoft.BicisBogota.Model.Location;
 import com.IngeSoft.BicisBogota.Model.Rent;
 import com.IngeSoft.BicisBogota.Model.User;
+import com.IngeSoft.BicisBogota.Repository.ArriveRepo;
 import com.IngeSoft.BicisBogota.Repository.BicycleRepo;
 import com.IngeSoft.BicisBogota.Repository.LocationRepo;
 import com.IngeSoft.BicisBogota.Repository.RentRepo;
@@ -27,6 +31,9 @@ public class InicializadorDatos implements CommandLineRunner{
 
     @Autowired
     RentRepo rentRepo;
+
+    @Autowired
+    ArriveRepo arriveRepo;
 
     InicializadorDatos(){}
 
@@ -63,6 +70,13 @@ public class InicializadorDatos implements CommandLineRunner{
         rent.setBicycle(bike);
         rent.setLocation(location);
         rentRepo.save(rent);
+
+        Arrive arrive = new Arrive();
+        arrive.setDate(LocalDate.now());
+        arrive.setUser(user);
+        arrive.setBicycle(bike);
+        arrive.setLocation(location);
+        arriveRepo.save(arrive);
     }
     
 }

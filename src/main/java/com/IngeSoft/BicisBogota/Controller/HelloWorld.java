@@ -13,8 +13,8 @@ public class HelloWorld {
         + "<li><a href=\"./users\">Users</a></li>"
         + "<li><a href=\"./bicycles\">Bicycles</a></li>"
         + "<li><a href=\"./locations\">Locations</a></li>"
-        + "<li><a href=\"./rents\">Rents</a></li>"
         + "<li><a href=\"./arrives\">Arrives</a></li>"
+        + "<li><a href=\"./rents\">Rents</a></li>"
         + "</ul>";
     }
 }
