@@ -1,5 +1,7 @@
 package com.IngeSoft.BicisBogota.Model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,6 +31,9 @@ public class Rent {
     @Column(name="id_rent")
     Integer idRent;
 
+    @Column(nullable = false, name = "date")
+    LocalDate date;
+    
     // Relations
 
     //Rent * -- 1 User

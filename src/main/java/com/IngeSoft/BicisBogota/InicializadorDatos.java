@@ -69,6 +69,7 @@ public class InicializadorDatos implements CommandLineRunner{
         rent.setUser(user);
         rent.setBicycle(bike);
         rent.setLocation(location);
+        rent.setDate(LocalDate.now());
         rentRepo.save(rent);
 
         Arrive arrive = new Arrive();
