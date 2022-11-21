@@ -14,15 +14,15 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class UserDto {
-    String Name;
-    String Email;
+    String name;
+    String email;
 
     public UserDto (User user) {
         this(user.getName(), user.getEmail());
     }
 
-    public UserDto (String Name, String Email) {
-        this.Name = Name;
-        this.Email = Email;
+    public UserDto (String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 }

@@ -24,11 +24,11 @@ public class Benefits {
     @Id
     @GeneratedValue
     @Column(name="id_benefit")
-    Integer Id_benefit;
+    Integer idBenefit;
 
     @Column(name="numberOfArrives",nullable=false)
-    Integer NoOfArrives;
+    Integer noOfArrives;
 
     @Column(name="description",nullable=false)
-    String Description;
+    String description;
 }

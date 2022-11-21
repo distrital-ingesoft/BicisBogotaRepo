@@ -12,17 +12,17 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class BicycleDto {
-    Integer Id_bicycle;
-    String Brand;
-    Integer Year;
-    Double Price;
-    Boolean Borrowed;
+    Integer idBicycle;
+    String brand;
+    Integer year;
+    Double price;
+    Boolean borrowed;
 
-    public BicycleDto (Integer Id_bicycle, String Brand, Integer Year, Double Price, Boolean Borrowed) {
-        this.Id_bicycle = Id_bicycle;
-        this.Brand = Brand;
-        this.Year = Year;
-        this.Price = Price;
-        this.Borrowed = Borrowed;
+    public BicycleDto (Integer idBicycle, String brand, Integer year, Double price, Boolean borrowed) {
+        this.idBicycle = idBicycle;
+        this.brand = brand;
+        this.year = year;
+        this.price = price;
+        this.borrowed = borrowed;
     }
 }

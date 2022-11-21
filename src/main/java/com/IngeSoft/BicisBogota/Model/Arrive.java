@@ -24,7 +24,7 @@ public class Arrive {
 
     @Id
     @GeneratedValue
-    Integer Id_arrive;
+    Integer idArrive;
 
     //Relations
 

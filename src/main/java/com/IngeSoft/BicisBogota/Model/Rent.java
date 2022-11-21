@@ -27,7 +27,7 @@ public class Rent {
     @Id
     @GeneratedValue
     @Column(name="id_rent")
-    Integer Id_rent;
+    Integer idRent;
 
     // Relations
 

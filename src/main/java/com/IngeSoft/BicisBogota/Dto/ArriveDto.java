@@ -17,13 +17,13 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class ArriveDto {
     
-    Integer Id_arrive;
+    Integer idArrive;
     User user;
     Bicycle bicycle;
     Location location;
 
-    public ArriveDto(Integer Id_arrive, User user, Bicycle bicycle, Location location ){
-        this.Id_arrive = Id_arrive;
+    public ArriveDto(Integer idArrive, User user, Bicycle bicycle, Location location ){
+        this.idArrive = idArrive;
         this.user = user;
         this.bicycle = bicycle;
         this.location = location;

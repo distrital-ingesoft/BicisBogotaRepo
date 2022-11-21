@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -45,11 +47,13 @@ public class Bicycle {
 
     //Relations
 
-    // Bicycle 1 -- * Rent 
+    // Bicycle 1 -- * Rent
+    @JsonIgnore 
     @OneToMany(mappedBy = "bicycle")
     List<Rent> rentas = new ArrayList<>();
 
     // Bicycle 1 -- * Arrive 
+    @JsonIgnore
     @OneToMany(mappedBy = "bicycle")
     List<Arrive> arrives = new ArrayList<>();
 

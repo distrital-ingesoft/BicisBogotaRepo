@@ -17,13 +17,13 @@ import lombok.Setter;
 @EqualsAndHashCode
 
 public class RentDto {
-    Integer Id_rent;
+    Integer idRent;
     User user;
     Bicycle bicycle;
     Location location;
 
-    public RentDto (Integer Id_rent, User user, Bicycle bicycle, Location location ) {
-        this.Id_rent = Id_rent;
+    public RentDto (Integer idRent, User user, Bicycle bicycle, Location location ) {
+        this.idRent = idRent;
         this.user = user;
         this.bicycle = bicycle;
         this.location = location;

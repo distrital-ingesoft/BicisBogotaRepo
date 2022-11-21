@@ -13,13 +13,13 @@ import lombok.Setter;
 @EqualsAndHashCode
 
 public class BenefitsDto {
-    Integer Id_benefit;
-    Integer NoOfArrives;
-    String Description;
+    Integer idBenefit;
+    Integer noOfArrives;
+    String description;
 
-    public BenefitsDto (Integer Id_benefit, Integer NoOfArrives, String Description) {
-        this.Id_benefit = Id_benefit;
-        this.NoOfArrives = NoOfArrives;
-        this.Description = Description;
+    public BenefitsDto (Integer idBenefit, Integer noOfArrives, String description) {
+        this.idBenefit = idBenefit;
+        this.noOfArrives = noOfArrives;
+        this.description = description;
     }
 }

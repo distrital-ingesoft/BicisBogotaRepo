@@ -13,13 +13,13 @@ import lombok.Setter;
 @EqualsAndHashCode
 
 public class LocationDto {
-    Integer Id_location;
-    String Location_name;
-    String Location_address;
+    Integer idLocation;
+    String location_name;
+    String location_address;
 
-    public LocationDto (Integer Id_location, String Location_name, String Location_address) {
-        this.Id_location = Id_location;
-        this.Location_name = Location_name;
-        this.Location_address = Location_address;
+    public LocationDto (Integer idLocation, String location_name, String location_address) {
+        this.idLocation = idLocation;
+        this.location_name = location_name;
+        this.location_address = location_address;
     }
 }

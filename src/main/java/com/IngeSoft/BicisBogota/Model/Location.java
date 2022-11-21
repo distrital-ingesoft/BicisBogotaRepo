@@ -26,12 +26,12 @@ public class Location {
     // Atributes
     @Id
     @GeneratedValue
-    Integer Id_location;
+    Integer idLocation;
 
     @Column(nullable = false,name="location_name")
-    String Location_name;
+    String location_name;
     @Column(nullable = false,name="location_address")
-    String Location_address;
+    String location_address;
 
     //Relations
 
