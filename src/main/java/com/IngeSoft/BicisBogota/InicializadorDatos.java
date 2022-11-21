@@ -45,8 +45,8 @@ public class InicializadorDatos implements CommandLineRunner{
         userRepo.save(user);
 
         Location location = new Location();
-        location.setLocation_name("Universidad Distrital");
-        location.setLocation_address("La séptima");
+        location.setLocationName("Universidad Distrital");
+        location.setLocationAddress("La séptima");
       
         locationRepo.save(location);
 
