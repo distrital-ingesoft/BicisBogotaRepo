@@ -33,14 +33,14 @@ public class UserService {
         
         List<User> usuariosConMismoNombre = this.repository.findByIdUser(newUser.getIdUser());
         List<User> usuariosConMismoEmail = this.repository.findByEmail(newUser.getEmail());
-        
-        //boolean status1 = usuariosConMismoNombre.isEmpty();
-        //boolean status2 = list2.isEmpty();
+        List<User> usuariosConMismoTel = this.repository.findByPhone(newUser.getPhone());
 
         if(!usuariosConMismoNombre.isEmpty()){
             throw new Exception("The user's ID is already registered!");
         }else if (!usuariosConMismoEmail.isEmpty()){
             throw new Exception("The user's Email is already registered!");
+        }else if (!usuariosConMismoTel.isEmpty()) {
+            throw new Exception("The user's Phone is already registered!");
         }
         else{
             return this.repository.save(newUser);

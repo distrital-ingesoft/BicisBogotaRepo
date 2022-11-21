@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.IngeSoft.BicisBogota.Model.Bicycle;
+import com.IngeSoft.BicisBogota.Model.Location;
 import com.IngeSoft.BicisBogota.Model.Rent;
 import com.IngeSoft.BicisBogota.Model.User;
 import com.IngeSoft.BicisBogota.Repository.RentRepo;
@@ -66,5 +67,13 @@ public class RentService {
         }
     }
 
+    public List<Rent> findRents_location (Location location) throws Exception {
+        List<Rent> rentsGivenALocation = this.repository.findByLocation(location);
+        if(!rentsGivenALocation.isEmpty()){
+            throw new Exception("There is any rents for this location");   
+        }else{
+            return rentsGivenALocation;
+        }
+    }
 
 }
