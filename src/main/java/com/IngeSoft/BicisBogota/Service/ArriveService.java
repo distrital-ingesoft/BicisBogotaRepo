@@ -68,4 +68,7 @@ public class ArriveService {
         }
     }
 
+    //6) Search for arrives given a user name and a date of beginning
+    //public 
+
 }
