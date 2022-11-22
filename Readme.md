@@ -8,4 +8,5 @@ The goal is to setup a web service using Docker and Springboot framework (Depene
 
 ![SequenceDiagram1](https://user-images.githubusercontent.com/49048548/203198213-4d83992d-c372-4def-88e2-d5b87e47a293.png)
 
-![SequenceDiagram2](https://user-images.githubusercontent.com/49048548/203198253-00fbca6f-6512-48e2-8826-17a64a4cd13c.png)
+![SequenceDiagram2](https://user-images.githubusercontent.com/49048548/203198893-ef77af9b-2426-47e8-bc87-006b627c2251.PNG)
+
