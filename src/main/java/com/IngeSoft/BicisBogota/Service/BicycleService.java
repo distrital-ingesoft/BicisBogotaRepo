@@ -65,5 +65,33 @@ public class BicycleService {
         Boolean status = bicycle.getBorrowed();
         bicycle.setBorrowed(!status);
     } 
+
+    //6) Search bicycles by borrowed status
+    public List<Bicycle> findBicycle_isBorrowed (Boolean borrowed ) throws Exception {
+        List<Bicycle> bicycleIsBorrowed = this.repository.findByBorrowed(borrowed);
+        
+        if (bicycleIsBorrowed.isEmpty()) {
+            throw new Exception("There are any bicycle with that borrowed status.");
+        }else{
+            return bicycleIsBorrowed;
+        }
+    }
+
+    //7) Search bicycles registered between a Start year and End year
+    public List<Bicycle> findBicycle_periodTime(Integer startYear, Integer endYear) throws Exception  {
+        if (startYear > endYear) {
+            throw new Exception("The start year is greater than end year. Start year must be lesser than End year.");
+        }else{
+            return this.repository.findByYearBetween(startYear, endYear);
+        }
+    }
     
+    //8) Search bicycles within a price interval
+    public List<Bicycle> findBicycle_PriceInterval (Double startPrice, Double endPrice) throws Exception {
+        if(startPrice > endPrice) {
+            throw new Exception("The start price is greater than end price. Start price must be lesser than end price.");
+        }else{
+            return this.repository.findByPriceBetween(startPrice, endPrice);
+        }
+    } 
 }
