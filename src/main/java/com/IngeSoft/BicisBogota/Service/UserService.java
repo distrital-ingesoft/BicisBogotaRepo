@@ -47,29 +47,52 @@ public class UserService {
         }
     }
 
-    //3) Search for a particular user
+    //3) Search for a particular user by id
     public User findUser_id(Long id) throws Exception{
-        List<User> usuariosConMismoNombre = this.repository.findByIdUser(id);
+        List<User> usuarioConId = this.repository.findByIdUser(id);
         //Boolean status = list.isEmpty();
 
-        if(!usuariosConMismoNombre.isEmpty()){
+        if(!usuarioConId.isEmpty()){
             throw new Exception("There is not User with this ID");
         }else{
-            return usuariosConMismoNombre.get(0);
+            return usuarioConId.get(0);
         }
     }
 
     //4) Delete a user by ID
     public void deleteUser_id(Long id) throws Exception{
-        List<User> usuariosConMismoNombre = this.repository.findByIdUser(id);
+        List<User> usuarioConId = this.repository.findByIdUser(id);
         //Boolean status = list.isEmpty();
 
-        if(!usuariosConMismoNombre.isEmpty()){
+        if(!usuarioConId.isEmpty()){
             throw new Exception("There is not User with this ID");
         }else{
             this.repository.deleteById(id);
         }
     }
+
+    //5) Search for an user with the same name
+    public List<User> findUser_name (String name) throws Exception{
+        List<User> usuariosConMismoNombre = this.repository.findByName(name);
+
+        if(usuariosConMismoNombre.isEmpty()){
+            throw new Exception("There is any user with that name.");
+        }else{
+            return usuariosConMismoNombre;
+        }
+    }
+
+    //6) Search for an user by email
+    public User findUser_email (String email) throws Exception{
+        List<User> usuarioConEmail = this.repository.findByEmail(email);
+        if(usuarioConEmail.isEmpty()){
+            throw new Exception("There is any user with that Email");
+        }else{
+            return usuarioConEmail.get(0);
+        }
+    } 
+
+
 
 
 }

@@ -55,6 +55,9 @@ public class RentController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public String addRent (@RequestBody Rent newRent) throws Exception {
         Rent newrent = this.serviceRent.addRent(newRent);
+        Bicycle bicycle = newRent.getBicycle();
+        //Change bicycle status borrowed = true
+        this.serviceBicycle.changeStatusBicycle(bicycle.getIdBicycle());
         return newrent.getDate().toString();
     }
 

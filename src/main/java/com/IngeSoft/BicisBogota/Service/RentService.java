@@ -33,6 +33,7 @@ public class RentService {
         if(!rentsUsuarioConMismaFecha.isEmpty()){
             throw new Exception("There is already registered for this user a rent today");
         }else{
+            
             return this.repository.save(newRent);
         }
     }
