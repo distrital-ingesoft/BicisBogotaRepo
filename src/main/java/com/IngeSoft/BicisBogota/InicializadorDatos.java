@@ -79,19 +79,19 @@ public class InicializadorDatos implements CommandLineRunner{
         arrive.setLocation(location);
         arriveRepo.save(arrive);
 
-        Arrive arrive = new Arrive();
-        arrive.setDate(LocalDate.parse("2022-10-22"));
-        arrive.setUser(user);
-        arrive.setBicycle(bike);
-        arrive.setLocation(location);
-        arriveRepo.save(arrive);
+        Arrive arrive1 = new Arrive();
+        arrive1.setDate(LocalDate.parse("2022-10-22"));
+        arrive1.setUser(user);
+        arrive1.setBicycle(bike);
+        arrive1.setLocation(location);
+        arriveRepo.save(arrive1);
 
-        Arrive arrive = new Arrive();
-        arrive.setDate(LocalDate.parse("2022-10-23"));
-        arrive.setUser(user);
-        arrive.setBicycle(bike);
-        arrive.setLocation(location);
-        arriveRepo.save(arrive);
+        Arrive arrive2 = new Arrive();
+        arrive2.setDate(LocalDate.parse("2022-10-23"));
+        arrive2.setUser(user);
+        arrive2.setBicycle(bike);
+        arrive2.setLocation(location);
+        arriveRepo.save(arrive2);
     }
     
 }

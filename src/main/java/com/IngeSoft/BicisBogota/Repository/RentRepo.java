@@ -31,5 +31,11 @@ public interface RentRepo extends JpaRepository<Rent,Integer>{
     List<Rent> findByUserAndLocation(User user, LocalDate date);
 
     List<Rent> findByBicycleAndLocation(Bicycle bicycle, Location location);
-    
+
+    List<Rent> findByUserAndDateBetween(User user, LocalDate start, LocalDate end);
+
+    List<Rent> findByBicycleAndDateBetween(Bicycle bicycle, LocalDate start, LocalDate end);
+
+    List<Rent> findByLocationAndDateBetween(Location location, LocalDate start, LocalDate end);
+
 }

@@ -67,6 +67,7 @@ public class RentService {
         }
     }
 
+    //5) Search for rents given a location
     public List<Rent> findRents_location (Location location) throws Exception {
         List<Rent> rentsGivenALocation = this.repository.findByLocation(location);
         if(!rentsGivenALocation.isEmpty()){
@@ -76,4 +77,45 @@ public class RentService {
         }
     }
 
+    //6)Search for rentals given a user, a date of beginning and a date of ending
+    public List<Rent> findRentsUser_periodTime (User user, LocalDate start, LocalDate end) throws Exception{
+        Boolean isBefore = end.isBefore(start);
+        Boolean isEqual = end.isEqual(start);
+
+        if (isBefore) {
+            throw new Exception("End date is before to Start date. End date must be  after of start date");
+        }else if (isEqual) {
+            throw new Exception("Start and End dates are equal. Start date must be before of End date");
+        }else {
+            return this.repository.findByUserAndDateBetween (user, start,end);
+        }   
+    }
+
+    //7) Search for rentals given a bicycle, a date of beginning and a date of ending
+    public List<Rent> findRentsBicycle_periodTime (Bicycle bicycle, LocalDate start, LocalDate end) throws Exception{
+        Boolean isBefore = end.isBefore(start);
+        Boolean isEqual = end.isEqual(start);
+
+        if (isBefore) {
+            throw new Exception("End date is before to Start date. End date must be  after of start date");
+        }else if (isEqual) {
+            throw new Exception("Start and End dates are equal. Start date must be before of End date");
+        }else {
+            return this.repository.findByBicycleAndDateBetween (bicycle, start, end);
+        }   
+    }    
+
+    //8) Search for rentals given a location, a date of beginning and a date of ending
+    public List<Rent> findRentsLocation_periodTime (Location location, LocalDate start, LocalDate end) throws Exception{
+        Boolean isBefore = end.isBefore(start);
+        Boolean isEqual = end.isEqual(start);
+
+        if (isBefore) {
+            throw new Exception("End date is before to Start date. End date must be  after of start date");
+        }else if (isEqual) {
+            throw new Exception("Start and End dates are equal. Start date must be before of End date");
+        }else {
+            return this.repository.findByLocationAndDateBetween (location, start,end);
+        }   
+    }
 }
