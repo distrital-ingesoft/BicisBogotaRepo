@@ -30,6 +30,8 @@ public interface ArriveRepo extends JpaRepository<Arrive,Integer>{
 
     List<Arrive> findByUserAndBicycle (User user, Bicycle bicycle);
 
+    List<Arrive> findByUserAndDateBetween(User User, LocalDate start, LocalDate end);
+
 
     
 }

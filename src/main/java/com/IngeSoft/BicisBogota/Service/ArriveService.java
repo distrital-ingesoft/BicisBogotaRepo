@@ -10,7 +10,6 @@ import com.IngeSoft.BicisBogota.Model.Bicycle;
 import com.IngeSoft.BicisBogota.Model.User;
 import com.IngeSoft.BicisBogota.Repository.ArriveRepo;
 
-
 @Component
 public class ArriveService {
 
@@ -68,7 +67,19 @@ public class ArriveService {
         }
     }
 
-    //6) Search for arrives given a user name and a date of beginning
-    //public 
+    //6) Search for arrives given a user name, a date of beginning and a date of ending
+    public List<Arrive> findArrives_periodTime (User user, LocalDate start, LocalDate end) throws Exception{
 
+        Boolean isBefore = end.isBefore(start);
+        Boolean isEqual = end.isEqual(start);
+
+        if (isBefore) {
+            throw new Exception("End date is before to Start date. End date must be  after of start date");
+        }else if (isEqual) {
+            throw new Exception("Start and End dates are equal. Start date must be before of End date");
+        }else {
+            List<Arrive> arrivalsGivenUserandDates = this.repository.findByUserAndDateBetween (user, start,end);
+            return arrivalsGivenUserandDates;
+        }
+    }
 }
