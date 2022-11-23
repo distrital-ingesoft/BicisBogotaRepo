@@ -52,7 +52,6 @@ public class ArriveController {
         User user = this.serviceUser.findUser_id(id);  
         LocalDate start = LocalDate.parse(startDate);
         LocalDate end = LocalDate.parse(endDate);
-
         return this.serviceArrive.findArrives_periodTime(user,start,end);
     }
 }

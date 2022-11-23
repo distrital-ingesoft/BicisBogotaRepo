@@ -44,10 +44,10 @@ public class InicializadorDatos implements CommandLineRunner{
         System.out.println("Inicializando Datos");
 
         User user = new User();
-        user.setIdUser(1L);
-        user.setEmail("ejemplo@ejemplo.com");
-        user.setName("Otto");
-        user.setPhone("111");
+        user.setIdUser(103070217L);
+        user.setEmail("jperezr@gmail.com");
+        user.setName("Julian");
+        user.setPhone("+57 3057245633");
         user.setAdminMode(false);
         userRepo.save(user);
 
@@ -59,9 +59,9 @@ public class InicializadorDatos implements CommandLineRunner{
 
         Bicycle bike = new Bicycle();
         bike.setIdBicycle(1);
-        bike.setBrand("monark");
+        bike.setBrand("Specialized");
         bike.setYear(2022);
-        bike.setPrice(1.0);
+        bike.setPrice(1000.0);
         bike.setBorrowed(false);
         bicycleRepo.save(bike);
 
@@ -73,7 +73,21 @@ public class InicializadorDatos implements CommandLineRunner{
         rentRepo.save(rent);
 
         Arrive arrive = new Arrive();
-        arrive.setDate(LocalDate.now());
+        arrive.setDate(LocalDate.parse("2022-10-21"));
+        arrive.setUser(user);
+        arrive.setBicycle(bike);
+        arrive.setLocation(location);
+        arriveRepo.save(arrive);
+
+        Arrive arrive = new Arrive();
+        arrive.setDate(LocalDate.parse("2022-10-22"));
+        arrive.setUser(user);
+        arrive.setBicycle(bike);
+        arrive.setLocation(location);
+        arriveRepo.save(arrive);
+
+        Arrive arrive = new Arrive();
+        arrive.setDate(LocalDate.parse("2022-10-23"));
         arrive.setUser(user);
         arrive.setBicycle(bike);
         arrive.setLocation(location);
