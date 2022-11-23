@@ -47,8 +47,9 @@ public class ArriveController {
     
     ///users/{id}/arrives?startDate=2022-10-21&endDate=2022-11-21
     @GetMapping("/users/{id}/arrives")
-    public List<Arrive> readAllArrivesGivenUserAndDates (@PathVariable("id") Long userId, @RequestParam(name="startDate",required=false) String startDate, @RequestParam(name="endDate",required=false) String endDate ) throws Exception {
-        User user = this.serviceUser.findUser_id(userId);  
+    public List<Arrive> readAllArrivesGivenUserAndDates (@PathVariable("id") String userId, @RequestParam(name="startDate",required=false) String startDate, @RequestParam(name="endDate",required=false) String endDate ) throws Exception {
+        Long id = Long.parseLong(userId);
+        User user = this.serviceUser.findUser_id(id);  
         LocalDate start = LocalDate.parse(startDate);
         LocalDate end = LocalDate.parse(endDate);
 
