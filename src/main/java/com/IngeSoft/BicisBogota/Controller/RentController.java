@@ -47,6 +47,7 @@ public class RentController {
     }
 
     @GetMapping("/rents")
+    
     public Iterable<Rent> readAllRents () {
         return this.serviceRent.getAllRents();
     }

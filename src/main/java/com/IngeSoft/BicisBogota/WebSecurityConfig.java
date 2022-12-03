@@ -30,8 +30,11 @@ public class WebSecurityConfig {
 		return http.build();
 	}
 
+	/*
 	@Bean
 	public UserDetailsService userDetailsService() {
+
+		UserDetailsService userDetailsService;
 		UserDetails user =
 			 User.withDefaultPasswordEncoder()
 				.username("julian")
@@ -40,5 +43,38 @@ public class WebSecurityConfig {
 				.build();
 
 		return new InMemoryUserDetailsManager(user);
+	}
+	*/
+
+	@Bean
+	public InMemoryUserDetailsManager userDetailsService () {
+		InMemoryUserDetailsManager usuarios = new InMemoryUserDetailsManager ();
+
+		usuarios.createUser( User 
+			.withDefaultPasswordEncoder()
+			.username("mapu")
+			.password("bicisbogota")
+			.roles("USER")
+			.build()
+		);
+
+		usuarios.createUser( User 
+			.withDefaultPasswordEncoder()
+			.username("fabian")
+			.password("bicisbogota")
+			.roles("USER")
+			.build()
+		);
+
+		usuarios.createUser( User 
+			.withDefaultPasswordEncoder()
+			.username("julian")
+			.password("bicisbogota")
+			.roles("ADMIN")
+			.build()
+		);
+		
+		return usuarios;
+
 	}
 }
