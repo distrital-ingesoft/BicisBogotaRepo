@@ -44,6 +44,13 @@ public class ArriveController {
         this.serviceBicycle = serviceBicycle;
         this.serviceLocation = serviceLocation;
     }
+    /*
+    @GetMapping("/arrives")
+    public Page<Arrive> readAllArrives (@RequestParam (defaultValue = "0") int page, @RequestParam (defaultValue = "10") int pageSize) {
+        Page<Arrive> pagina = this.serviceArrive.getAllArrives(PageRequest.of(page,pageSize));
+        return pagina;
+    }
+     */
 
     @GetMapping("/arrives")
     public Iterable<Arrive> readAllArrives () {
@@ -58,7 +65,7 @@ public class ArriveController {
     }
     
     ///users/{id}/arrives?startDate=2022-10-21&endDate=2022-11-21
-    @GetMapping("/users/{id}/arrives")
+    @GetMapping("/users/{id}/arrives") 
     public List<Arrive> readAllArrivesGivenUserAndDates (@PathVariable("id") String userId, @RequestParam(name="startDate",required=false) String startDate, @RequestParam(name="endDate",required=false) String endDate ) throws Exception {
         Long id = Long.parseLong(userId);
         User user = this.serviceUser.findUser_id(id);  
