@@ -4,7 +4,7 @@ An initial version of a web application which offer a renting bicycle service an
 
 The goal is to setup a web service using Docker and Springboot framework (Depenencies used are Spring Web, Lombok, Spring Data JPA and MySQL Driver). 
 
-![ClassDiagramProject](https://user-images.githubusercontent.com/49048548/203186518-d7e9e03b-f5e2-41cf-9109-83db764f1b56.PNG)
+![DiagramaClases](https://user-images.githubusercontent.com/49048548/205450643-58074a8c-8093-426f-b154-bc02af6c667c.png)
 
 ![SequenceDiagram1](https://user-images.githubusercontent.com/49048548/203198213-4d83992d-c372-4def-88e2-d5b87e47a293.png)
 
