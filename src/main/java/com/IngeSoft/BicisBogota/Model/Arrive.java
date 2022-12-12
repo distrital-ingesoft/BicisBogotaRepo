@@ -15,6 +15,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,14 +37,17 @@ public class Arrive {
     //Relations
 
     // Arrive 1 -- * User
+    @JsonIgnore
     @ManyToOne
     User user;
     
     // Arrive 1 -- * Bicycle
+    @JsonIgnore
     @ManyToOne
     Bicycle bicycle;
 
     // Arrive 1 -- * Location
+    @JsonIgnore
     @ManyToOne
     Location location;
     

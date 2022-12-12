@@ -37,14 +37,17 @@ public class Rent {
     // Relations
 
     //Rent * -- 1 User
+    @JsonIgnore
     @ManyToOne
     User user;
 
     //Rent * -- 1 Bicycle
+    @JsonIgnore
     @ManyToOne
     Bicycle bicycle;
 
     //Rent * -- 1 Location
+    @JsonIgnore
     @ManyToOne
     Location location;
 
