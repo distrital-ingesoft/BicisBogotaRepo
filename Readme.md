@@ -1,8 +1,12 @@
 # IngeSoftProject_BicisBogota
 
+(feature-ajuste-proyecto branch has the latest changes)
+
 An initial version of a web application which offer a renting bicycle service and  managing the count user's arrives using bicycles with aim to give benefits who have an specific number of arrives.
 
 The goal is to setup a web service using Docker and Springboot framework (Depenencies used are Spring Web, Lombok, Spring Data JPA and MySQL Driver). 
+
+Link to project slides description : https://docs.google.com/presentation/d/1hWqxBUNMbA2YfqQUi5ibA7OnPJfJbK1BNz8oXDG-tJM/edit#slide=id.p
 
 ![DiagramaClases](https://user-images.githubusercontent.com/49048548/205450643-58074a8c-8093-426f-b154-bc02af6c667c.png)
 
